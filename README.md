@@ -3,8 +3,9 @@ My attempt at Conway's Game of Life in Python. The application initializes a n *
 <ol>
   <li> If the cell has three active neighbours, the cell's state is active.</li>
   <li> If the cell is active and has two active neighbours, the cell's state remains active.</li>
-  <li> Otherwise the cell's state is inactive.
+  <li> Otherwise the cell's state is inactive.</li>
 </ol>
+
 ## Motivation
 The motivation behind this project was to utilize Pygame's double buffer.
 
