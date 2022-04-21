@@ -160,15 +160,15 @@ class GridOfLife(Grid):
                 _self.activeNeighbours[row][col] += _self.grid[row - 1][col - 1]
 
     def applyRules(_self):
-        for row in range(_self.getRows()):
-            for col in range(_self.getCols()):
+        for row in range(_self.rows):
+            for col in range(_self.cols):
                 if (_self.activeNeighbours[row][col] == 3):
-                    _self.getGrid()[row][col] = 1
+                    _self.grid[row][col] = 1
                 elif ((_self.activeNeighbours[row][col] == 2) and
                          (_self.getGrid()[row][col])):
-                    _self.getGrid()[row][col] = 1
+                    _self.grid[row][col] = 1
                 else:
-                    _self.getGrid()[row][col] = 0
+                    _self.grid[row][col] = 0
 
     def nextGeneration(_self):
         _self.countActiveNeighbours()
@@ -189,14 +189,17 @@ def main():
     clock = pygame.time.Clock()
     while True:
         screen.fill(colorWhite)
-        for row in range(grid.getRows()):
-            for col in range(grid.getCols()):
-                if (grid.getGrid()[row][col]):
+        rows = grid.getRows()
+        cols = grid.getCols()
+        cells = grid.getGrid()
+        for row in range(rows):
+            for col in range(cols):
+                if (cells[row][col]):
                     rect = pygame.Rect(
-                        row * (width / grid.getRows()),
-                        col * (height / grid.getCols()),
-                        width / grid.getRows(),
-                        height / grid.getCols(),
+                        row * (width / rows),
+                        col * (height / cols),
+                        width / rows,
+                        height / cols,
                         )
                     pygame.draw.rect(
                         screen,
