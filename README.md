@@ -14,3 +14,4 @@ The requirements are Pygame, numpy, and Python.
 
 ## Screenshots
 
+![ConwayPython](https://user-images.githubusercontent.com/19720138/164484202-0c69f993-d084-42ff-ae6b-0841df11686f.gif)
